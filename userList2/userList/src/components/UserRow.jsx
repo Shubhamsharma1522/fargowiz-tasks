@@ -1,11 +1,11 @@
 import React from "react";
 
-const UserRow = ({user }) => {
+const UserRow = ({userr }) => {
   return (
     <tr>
-      <td>{user.id}</td>
-      <td>{user.title}</td>
-      <td>{user.body}</td>
+      <td>{userr.id}</td>
+      <td>{userr.title}</td>
+      <td>{userr.body}</td>
     </tr>
   );
 };

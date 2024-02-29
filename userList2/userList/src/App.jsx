@@ -4,7 +4,7 @@ import "./App.css";
 import UserTable from "./components/UserTable.jsx";
 
 function App() {
-  const users = [
+  const userss = [
     {
       id: 1,
       title: "virat",
@@ -65,7 +65,7 @@ function App() {
   return (
     <div className="App">
       <h1>List of Users</h1>
-      <UserTable users={users} />
+      <UserTable useres={userss} />
     </div>
   );
 }

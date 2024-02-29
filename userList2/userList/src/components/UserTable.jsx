@@ -1,8 +1,8 @@
 import React from "react";
 import UserRow from "./UserRow.jsx";
 
-const UserTable = ({ users }) => {
-  const limitedUsers = users.slice(0, 10);
+const UserTable = ({ useres }) => {
+  const limitedUsers = useres.slice(0, 10);
   return (
     <table className="user-table">
       <thead>
@@ -14,7 +14,7 @@ const UserTable = ({ users }) => {
       </thead>
       <tbody>
         {limitedUsers.map((user) => (
-          <UserRow key={user.id} user={user} />
+          <UserRow key={user.id} userr={user} />
         ))}
       </tbody>
     </table>
