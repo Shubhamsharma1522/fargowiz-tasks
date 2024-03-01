@@ -1,3 +1,11 @@
+.main-container{
+  width: 800px;
+  height: 500px;
+  border: 1px solid black;
+  background-color: #007bff;
+}
+
+
 .container {
     max-width: 600px;
     margin: 20px auto;
@@ -12,16 +20,50 @@
     border-collapse: collapse;
     margin-bottom: 20px;
   }
-  
-  th, td {
+
+  .dark-mode {
+    background-color: rgb(5, 5, 5);
+    color:rgb(250, 248, 248);
+  }
+
+  .dark-mode th{
     padding: 10px;
-    border: 1px solid #ddd;
+    background-color: #ff0000;
+    color:rgb(8, 8, 8);
+    border: 1px solid #fcfafa;
   }
   
-  th {
-    background-color: #faf7f7;
+ .dark-mode td {
+  padding: 10px;
+  border: 1px solid #faf9f9;
+}
+  
+  .dark-mode #toggleButton {
+    background-color: #f8f8f8;
     color:black;
   }
+  
+  .dark-mode #toggleButton:hover {
+    background-color: #777;
+  }
+  
+  .light-mode {
+    background-color: white;
+    color:black;
+  }
+
+  .light-mode th{
+    padding: 10px;
+    background-color: #007bff;
+    color:rgb(252, 251, 251);
+    border: 1px solid #000000;
+  }
+  
+ .light-mode td {
+  padding: 10px;
+  border: 1px solid #000000;
+}
+
   
   #toggleButton {
     padding: 10px 20px;
@@ -33,23 +75,15 @@
   }
   
   #toggleButton:hover {
-    background-color: #0056b3;
+    background-color: #030303;
   }
   
-  .dark-mode {
-    background-color: #000000;
-    color: #fff;
-  }
-  
-  .dark-mode th {
-    background-color: #e60b0b;
-  }
-  
-  .dark-mode #toggleButton {
-    background-color: #555555;
-  }
-  
-  .dark-mode #toggleButton:hover {
-    background-color: #777;
-  }
-  
+ .themeLight-mode{
+  background-color: #f6f7f8;
+  color: #0c0c0c;
+ }
+
+ .themeDark-mode{
+  background-color: #007bff;
+  color: #faf9f9;
+ }

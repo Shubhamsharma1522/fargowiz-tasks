@@ -3,13 +3,20 @@ import './styles.css';
 
 const Ui = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  
 
   const toggleMode = () => {
     setIsDarkMode(!isDarkMode);
   };
 
   return (
-    <div className={`container ${isDarkMode ? 'dark-mode' : ''}`}>
+    <> 
+    <div className={`main-container ${isDarkMode ? "themeLight-mode" : "themeDark-mode"}`}>
+
+        <h1>Theme Changer</h1>
+
+
+       <div className={`container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
       <table>
         <thead>
           <tr>
@@ -36,8 +43,11 @@ const Ui = () => {
           </tr>
         </tbody>
       </table>
-      <button id="toggleButton" onClick={toggleMode}>{ isDarkMode ? "Light" : "Dark"}</button>
+      <button id="toggleButton" onClick={toggleMode}>{ isDarkMode ? "Dark => Light" : "Light => Dark"}</button>
     </div>
+    </div>
+    </>
+
   );
 };
 
