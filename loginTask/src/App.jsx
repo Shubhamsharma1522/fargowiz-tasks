@@ -8,10 +8,11 @@ function LoginForm() {
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
   const [isButtonGreen, setIsButtonGreen] = useState(false);
+  const [state, setState] = useState({ email: "", password: "" });
 
   const validationEmail = () => {
     if (!email.includes("@")) {
-      setEmailError('Invalid Email ID');
+      setEmailError("Invalid Email ID");
       return false;
     }
     setEmailError("");
@@ -52,39 +53,55 @@ function LoginForm() {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", marginTop: "50px" }}>
-     <div style={{ textAlign: "center", width: "300px", border: "1px solid #ccc", borderRadius: "8px", padding: "20px" }}>
-      <input
-        type="email"
-        placeholder="Enter Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      {emailError && <div style={{ color: "red" }}>{emailError}</div>}
-      <br />
+    <div
+      style={{ display: "flex", justifyContent: "center", marginTop: "50px" }}
+    >
+      <div
+        style={{
+          textAlign: "center",
+          width: "300px",
+          border: "1px solid #ccc",
+          borderRadius: "8px",
+          padding: "20px",
+        }}
+      >
+        <input
+          type="email"
+          placeholder="Enter Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        {emailError && <div style={{ color: "red" }}>{emailError}</div>}
+        <br />
 
-      <input
-        type="password"
-        placeholder="Enter Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      {passwordError && <div style={{ color: "red" }}>{passwordError}</div>}
-      <br />
+        <input
+          name="password"
+          type="password"
+          placeholder="Enter Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        {passwordError && <div style={{ color: "red" }}>{passwordError}</div>}
+        <br />
 
-      <input
-        type="password"
-        placeholder="Enter Confirm password"
-        value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
-      />
-      {confirmPasswordError && (
-        <div style={{ color: "red" }}>{confirmPasswordError}</div>
-      )}
-      <br />
+        <input
+          type="password"
+          placeholder="Enter Confirm password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+        />
+        {confirmPasswordError && (
+          <div style={{ color: "red" }}>{confirmPasswordError}</div>
+        )}
+        <br />
 
-      <button style={{backgroundColor: isButtonGreen ? "green" : "red"}} onClick={handleLogin}>Login</button>
-    </div>
+        <button
+          style={{ backgroundColor: isButtonGreen ? "green" : "red" }}
+          onClick={handleLogin}
+        >
+          Login
+        </button>
+      </div>
     </div>
   );
 }

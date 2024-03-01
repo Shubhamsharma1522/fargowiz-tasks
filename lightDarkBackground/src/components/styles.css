@@ -1,0 +1,55 @@
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #faf7f7;
+    color:black;
+  }
+  
+  #toggleButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #toggleButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .dark-mode {
+    background-color: #000000;
+    color: #fff;
+  }
+  
+  .dark-mode th {
+    background-color: #e60b0b;
+  }
+  
+  .dark-mode #toggleButton {
+    background-color: #555555;
+  }
+  
+  .dark-mode #toggleButton:hover {
+    background-color: #777;
+  }
+  
