@@ -13,7 +13,7 @@ const Ui = () => {
     <> 
     <div className={`main-container ${isDarkMode ? "themeLight-mode" : "themeDark-mode"}`}>
 
-        <h1>Theme Changer</h1>
+        <h1> {isDarkMode ? "Dark" : "Light"} Theme</h1>
 
 
        <div className={`container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
