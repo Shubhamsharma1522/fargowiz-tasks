@@ -8,7 +8,6 @@ function LoginForm() {
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
   const [isButtonGreen, setIsButtonGreen] = useState(false);
-  const [state, setState] = useState({ email: "", password: "" });
 
   const validationEmail = () => {
     if (!email.includes("@")) {
