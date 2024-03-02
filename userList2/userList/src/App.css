@@ -1,15 +1,30 @@
-.user-table{
-  width:100%;
-  border-collapse: collapse;
+*{
+  justify-content: center;
+}
+
+.table-container {
+  width: 500px;
   margin-top: 20px;
 }
 
-.user-table th, .user-table td{
-  border: 1px solid #dddddd;
-  padding: 8px;
-  text-align: left;
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.user-table th{
-  background-color: #fa0c0c;
+th, td {
+  border: 1px solid #0a0a0a;
+  text-align: center;
+  padding: 8px;
+}
+
+th {
+  background-color: #20b398;
+}
+
+tr:nth-child(even) {
+  background-color: #170c05;
+}
+tr:nth-child(odd) {
+  background-color: #625752;
 }
