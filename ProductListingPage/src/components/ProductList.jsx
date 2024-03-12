@@ -11,6 +11,7 @@ const ProductList = () => {
   const [cart, setCart] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(12);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchProducts();
@@ -18,10 +19,13 @@ const ProductList = () => {
 
   const fetchProducts = async () => {
     try {
+      setLoading(true);
       const response = await axios.get("https://dummyjson.com/products");
       setProducts(response.data.products); // Assuming the response data is an object with a 'products' array
     } catch (error) {
       console.error("Error fetching products: ", error);
+    }finally{
+      setLoading(false);
     }
   };
 
@@ -50,17 +54,21 @@ const ProductList = () => {
   return (
     <div>
       <Cart cartValue={cart} clearCart={clearCart} />
-      <div id="product-list">
-        {currentProducts.map((product, index) => (
-          <ProductCard key={index} product={product} addToCart={addToCart} />
-        ))}
-      </div>
-        <Pagination
-          productsPerPage={productsPerPage}
-          totalProducts={products.length}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
+      {loading ? (
+        "Loading..."
+      ) : (
+        <div id="product-list">
+          {currentProducts.map((product, index) => (
+            <ProductCard key={index} product={product} addToCart={addToCart} />
+          ))}
+        </div>
+      )}
+      <Pagination
+        productsPerPage={productsPerPage}
+        totalProducts={products.length}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 };
