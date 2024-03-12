@@ -5,6 +5,9 @@ import ProductCard from "../components/ProductCard.jsx";
 import Pagination from "../components/Pagination.jsx";
 import Cart from "./Cart.jsx";
 import "../index.css";
+import { helix } from "ldrs";
+
+helix.register();
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -24,8 +27,10 @@ const ProductList = () => {
       setProducts(response.data.products); // Assuming the response data is an object with a 'products' array
     } catch (error) {
       console.error("Error fetching products: ", error);
-    }finally{
-      setLoading(false);
+    } finally {
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
     }
   };
 
@@ -53,9 +58,13 @@ const ProductList = () => {
 
   return (
     <div>
-      <Cart cartValue={cart} clearCart={clearCart} />
+      <div className="cart-header">
+        <Cart cartValue={cart} clearCart={clearCart} />
+      </div>
       {loading ? (
-        "Loading..."
+        <div className="loader">
+          <l-helix size="100" speed="1.5" color="#ffc404" />
+        </div>
       ) : (
         <div id="product-list">
           {currentProducts.map((product, index) => (
@@ -63,12 +72,14 @@ const ProductList = () => {
           ))}
         </div>
       )}
-      <Pagination
-        productsPerPage={productsPerPage}
-        totalProducts={products.length}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
+      {!loading ? (
+        <Pagination
+          productsPerPage={productsPerPage}
+          totalProducts={products.length}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+      ) : null}
     </div>
   );
 };

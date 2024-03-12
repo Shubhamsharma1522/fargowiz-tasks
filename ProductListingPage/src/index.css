@@ -9,7 +9,7 @@ body {
   font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#29251c, #2c2306);
+  background: linear-gradient(#080808, #000000);
   color: #d9e2f1;
   min-height: 100vh;
 }
@@ -32,42 +32,47 @@ body {
 } */
 
 #product-list {
-  width: 90%;
-  max-width: 70rem;
+  /* width: 90%;
+  max-width: 20rem; */
   list-style: none;
-  margin: 2rem auto;
+  margin: 1rem auto;
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: 0.8rem;
 }
 
 .product-card {
+  width: fit-content;
+  padding: 10px;
   background-color: #1d1a16;
   border-radius: 1rem;
-  overflow: hidden;
+  /* overflow: hidden; */
   text-align: center;
+  border: 1px solid #ffc404;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 .product-card article {
-  height: 100%;
+  /* width: fit-content; */
   display: flex;
+  width: 19rem;
+  height: 25rem;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  /* background-color: rgb(33, 131, 138); */
 }
 
 .product-card img {
-  width: 30rem;
-  height: 15rem;
-  border: 2px solid #ffc404;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  /* object-fit: contain; */
+  width: 100%;
+  height: 50%;
+  /* border: 2px solid #ffc404; */
+  /* border-top-left-radius: 25px;
+  border-top-right-radius: 25px; */
+  object-fit: fill;
   /* border-radius: 5px; */
-  border: 2px solid #ffc404;
 }
 
 .product-card h3 {
@@ -93,6 +98,7 @@ body {
 
 .product-card-action {
   margin-bottom: 1.5rem;
+  margin-top: 1rem;
 }
 
 .product-card-action {
@@ -121,17 +127,23 @@ body {
 }
 
 .cart {
+  /* position: fixed; */
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   padding: 0 20px;
 }
 
-.cart span{
-    color: red;
+.cart-main{
+  display: flex;
+  justify-content:space-between ;
 }
 
-.cart button {
+.cart span {
+  color: #ffc404;
+}
+
+.cart-button {
   font: inherit;
   cursor: pointer;
   background-color: #ffc404;
@@ -141,40 +153,62 @@ body {
   border-radius: 4px;
 }
 
-.cart button:hover,
-.cart button:active {
-  background-color: #ffab04;
+.cart-button:hover,
+.cart-button:active {
+  background-color: #ffc404;
   /* height: 50px; */
   /* margin-top: 15px; */
   border-color: #ffab04;
   color: #1f1a09;
 }
 
-.cart button {
+.cart-button {
   font: inherit;
   cursor: pointer;
   background-color: transparent;
   border: none;
   padding: 0.5rem 1.5rem;
   color: #ffc404;
+  height: 40px;
+  margin-top: 20px;
+  margin-right: 20px;
 }
-
-.cart p {
+/* 
+.cart-value {
   font: inherit;
   cursor: pointer;
-  width: 10rem;
+  width: 1rem;
   background-color: #ffc404;
-  border: 1px solid #ffc404;
-  color: #1f1a09;
+   border: 1px solid #ffc404;
+  color: white; 
   padding: 0.5rem 1.5rem;
-  border-radius: 4px;
-}
-.cartContainer {
+  position: relative;
+  border-radius: 100px;
+} */
+
+/* .cartContainer {
   display: flex;
   gap: 10px;
   align-items: center;
+} */
+.cartContainer {
+  margin: 15px;
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  /* display: inline-block; */
 }
-
+.cart-value {
+  position: absolute;
+  top: -10px;
+  right: -14px;
+  background-color: #ff0000; 
+  color: #ffffff; 
+  padding: 3px 8px;
+  border-radius: 100px;
+  font-size: 10px; 
+}
 
 /* Pagination.css */
 .pagination {
@@ -190,20 +224,25 @@ body {
 
 .pagination a {
   text-decoration: none;
-  color: #007bff;
+  color: #ffc404;
   padding: 5px 10px;
-  border: 1px solid #007bff;
+  border: 1px solid #ffc404;
   border-radius: 5px;
 }
 
 .pagination a.active {
-  background-color: #007bff;
+  background-color: #ffc404;
   color: #fff;
 }
 
 .pagination a:hover {
-  background-color: #0056b3;
+  background-color: #ffb004;
   color: #fff;
 }
 
-
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
