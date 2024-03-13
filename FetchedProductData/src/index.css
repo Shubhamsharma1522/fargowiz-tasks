@@ -116,7 +116,6 @@ body {
   background-color: #ffab04;
   border-color: #ffab04;
   color: #1f1a09;
-  
 }
 
 .product-card-action {
@@ -246,4 +245,27 @@ body {
   justify-content: center;
   align-items: center;
   height: 80vh;
+}
+
+.notification {
+  position: fixed;
+  top: 1rem;
+  right: 10rem;
+  background-color: #f44336;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  /* z-index: 9999; */
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 20px;
+}
+
+.close:hover {
+  color: black;
 }

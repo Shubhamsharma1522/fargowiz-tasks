@@ -15,6 +15,7 @@ const ProductList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(12);
   const [loading, setLoading] = useState(true);
+  // const [sameItem, setSameItem] = useState(0);
 
   useEffect(() => {
     fetchProducts();
@@ -23,7 +24,7 @@ const ProductList = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("https://dummyjson.com/products");
+      const response = await axios.get("https://dummyjson.com/products/");
       setProducts(response.data.products); // Assuming the response data is an object with a 'products' array
     } catch (error) {
       console.error("Error fetching products: ", error);
@@ -33,6 +34,8 @@ const ProductList = () => {
       }, 2000);
     }
   };
+
+  // Add product to cart a single product can'nt exceed 10
 
   // Add product to cart logic here
   const addToCart = (product) => {
@@ -68,7 +71,11 @@ const ProductList = () => {
       ) : (
         <div id="product-list">
           {currentProducts.map((product, index) => (
-            <ProductCard key={index} product={product} addToCart={addToCart} />
+            <ProductCard
+              key={index}
+              product={product}
+              addToCart={addToCart}
+            />
           ))}
         </div>
       )}
