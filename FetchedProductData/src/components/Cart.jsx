@@ -1,13 +1,20 @@
 import { FaShoppingCart } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 import { useProduct } from "../Context/ProductContext.jsx";
 import "../index.css";
+import { getCartItemsTotal } from "../util/formatting.js";
 
 const Cart = () => {
-  const { cart, clearCart } = useProduct();
+  const { cart, clearCart, quantity } = useProduct();
+  console.log("cart adding", cart);
 
   const handleClearCart = () => {
     clearCart();
   };
+
+  console.log("Cart ", cart);
+  const cartLength = getCartItemsTotal(cart);
+  console.log("cartLength", cartLength);
 
   return (
     <div className="cart-main">
@@ -17,11 +24,11 @@ const Cart = () => {
         </h1>
         <div className="cartContainer">
           <FaShoppingCart />
-          <div className="cart-value">{cart.length}</div>
+          <div className="cart-value">{cartLength}</div>
         </div>
       </div>
       <button className="cart-button" onClick={handleClearCart}>
-        Clear Cart
+        <FaTrash /> Clear Cart
       </button>
     </div>
   );

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { ProductProvider } from "./Context/ProductContext.jsx";
 import ProductList from "./components/ProductList.jsx";
 import Cart from "./components/Cart.jsx";
+import { getCartItemsTotal } from "./util/formatting.js";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -38,15 +39,46 @@ function App() {
     };
   }, [clearAlert]);
 
-  const addToCart = (item) => {
+  //Methods
+
+  // const addToCart = (item, quantity) => {
+  //   console.log("item in  addToCart method", item, quantity);
+  //   cartLength = getCartItemsTotal(cart);
+  //   // Check if the total items in the cart exceed 20
+  //   if (cartLength >= 20) {
+  //     setShowAlert(true);
+  //     return;
+  //   }
+  //   setCart((prev) => [{ ...item, quantity }, ...prev]);
+  // };
+
+  const addByQuantity = (newItem, quantity) => {
+    console.log(cart, newItem, quantity, "addByQuantity");
+    const existingCartItemIndex = cart.findIndex(
+      (item) => item.id === newItem.id
+    );
+
+    const cartLength = getCartItemsTotal(cart);
     // Check if the total items in the cart exceed 20
-    if (cart.length >= 20) {
+    if (cartLength + quantity >= 20) {
       setShowAlert(true);
       return;
     }
 
-    // add in cart with quantity 1 if new item
-    setCart((prev) => [{ id: Date.now(), ...item, quantity: 1 }, ...prev]);
+    const updatedItems = [...cart];
+
+    if (existingCartItemIndex > -1) {
+      const existingItem = cart[existingCartItemIndex];
+
+      const updatedItem = {
+        ...existingItem,
+        quantity: existingItem.quantity + quantity,
+      };
+      updatedItems[existingCartItemIndex] = updatedItem;
+    } else {
+      updatedItems.push({ ...newItem, quantity });
+    }
+    setCart(updatedItems);
   };
 
   const clearCart = () => {
@@ -55,7 +87,8 @@ function App() {
   };
 
   return (
-    <ProductProvider value={{ addToCart, cart, clearCart }}>
+    //pass methods as a value
+    <ProductProvider value={{ cart, clearCart, addByQuantity }}>
       <Cart />
       <ProductList />
       {showAlert && (
