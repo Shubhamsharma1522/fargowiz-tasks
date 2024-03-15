@@ -5,7 +5,7 @@ import "../index.css";
 import { getCartItemsTotal } from "../util/formatting.js";
 
 const Cart = () => {
-  const { cart, clearCart, quantity } = useProduct();
+  const { cart, clearCart } = useProduct();
   console.log("cart adding", cart);
 
   const handleClearCart = () => {
@@ -13,7 +13,10 @@ const Cart = () => {
   };
 
   console.log("Cart ", cart);
+
+  //using total quantity method
   const cartLength = getCartItemsTotal(cart);
+
   console.log("cartLength", cartLength);
 
   return (

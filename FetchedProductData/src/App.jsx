@@ -58,8 +58,9 @@ function App() {
       (item) => item.id === newItem.id
     );
 
-    const cartLength = getCartItemsTotal(cart);
+    
     // Check if the total items in the cart exceed 20
+    const cartLength = getCartItemsTotal(cart);
     if (cartLength + quantity >= 20) {
       setShowAlert(true);
       return;

@@ -19,17 +19,21 @@ export const addElipsis = (str, limit) => {
 };
 
 function Products({ item }) {
-  const [quantity, setQuantity] = useState(1); // Initialize quantity state to 1
+  const [quantity, setQuantity] = useState(1); 
   const { addByQuantity } = useProduct();
 
+
+  //for submitting the form and adding the item to the cart
   const handleAddToCart = (event) => {
     event.preventDefault();
     console.log("item in handle addToCart function", item);
     addByQuantity(item, quantity); // Add item with specified quantity to cart
   };
 
+
+  //or updating the quantity when the user changes the input field
   const handleQuantityChange = (event) => {
-    const value = parseInt(event.target.value); // Parse input value to integer
+    const value = parseInt(event.target.value); 
     console.log("item in handle addToCart function", value);
     setQuantity(value); // Update quantity state
   };
@@ -46,7 +50,7 @@ function Products({ item }) {
           Price: {currencyFormatter.format(item.price)}
         </p>
         <form onSubmit={handleAddToCart}>
-          {" "}
+          {/**Users can adjust the quantity using the input field */}
           <input
             className="product-card-quantity"
             type="number"
