@@ -41,24 +41,12 @@ function App() {
 
   //Methods
 
-  // const addToCart = (item, quantity) => {
-  //   console.log("item in  addToCart method", item, quantity);
-  //   cartLength = getCartItemsTotal(cart);
-  //   // Check if the total items in the cart exceed 20
-  //   if (cartLength >= 20) {
-  //     setShowAlert(true);
-  //     return;
-  //   }
-  //   setCart((prev) => [{ ...item, quantity }, ...prev]);
-  // };
-
   const addByQuantity = (newItem, quantity) => {
     console.log(cart, newItem, quantity, "addByQuantity");
     const existingCartItemIndex = cart.findIndex(
       (item) => item.id === newItem.id
     );
 
-    
     // Check if the total items in the cart exceed 20
     const cartLength = getCartItemsTotal(cart);
     if (cartLength + quantity >= 20) {
