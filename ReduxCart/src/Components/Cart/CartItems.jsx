@@ -9,6 +9,7 @@ const CartItems = ({ item }) => {
 
   const handleIncreasing = () => {
     dispatch(cartActions.increaseQuantity(item.id));
+    // console.log(item.id, "item id");
   };
 
   const handleDecreasing = () => {

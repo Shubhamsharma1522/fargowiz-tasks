@@ -1,5 +1,4 @@
 import React from "react";
-import image from "../../assets/empty cart.png";
 import { useDispatch, useSelector } from "react-redux";
 import CartItems from "./CartItems";
 import classes from "./Cart.module.css";
@@ -12,10 +11,13 @@ const Cart = () => {
   const cartItems = useSelector((state) => state.cart.products);
   const { isAuthenticate } = useSelector((state) => state.auth);
 
-  const totalCartPrice = cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
+  const totalCartPrice = cartItems.reduce((total, item) => {
+    const totalPriceForItem = item.price * item.quantity;
+    console.log(`Adding ${totalPriceForItem} for item: ${item.title}`);
+    return total + totalPriceForItem;
+  }, 0);
+
+  // console.log("Total cart price:", totalCartPrice);
 
   const handlePlaceOrder = () => {
     dispatch(cartActions.clearCart());

@@ -47,7 +47,7 @@ const Login = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    // console.log("Name and value", e);
+    // console.log("Name and value", e, name , value);
     setFormData({
       ...formData,
       [name]: value,

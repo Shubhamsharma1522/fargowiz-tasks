@@ -41,7 +41,7 @@ const Register = () => {
       return;
     }
 
-    navigate("/");
+    navigate("/login");
 
     toast.success("Successfully Registered!");
   };
