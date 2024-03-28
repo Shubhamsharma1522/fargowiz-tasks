@@ -40,7 +40,7 @@ const Login = () => {
 
     dispatch(authActions.login({ email }));
     console.log(email, "email");
-    navigate("/products");
+    navigate("/");
 
     toast.success("Successfully Logged In!");
   };

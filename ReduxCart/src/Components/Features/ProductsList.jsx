@@ -8,7 +8,6 @@ const ProductsList = ({ item }) => {
   // console.log(quantity, "quantity");
   const dispatch = useDispatch();
 
-  const { isAuthenticate } = useSelector((state) => state.auth);
   const cartQuantity = useSelector((state) => state.cart.products);
 
   const cartItem = cartQuantity.find((cartItem) => cartItem.id === item.id);
@@ -34,38 +33,36 @@ const ProductsList = ({ item }) => {
 
   return (
     <>
-      {isAuthenticate && (
-        <div className={classes.card}>
-          <article className={classes.article}>
-            <div>
-              <img src={item.images[0]} alt={item.title} />
-            </div>
-            <div>
-              <p className={classes.title}>{item.title}</p>
-              <p className={classes.description}>
-                {addElipsis(item.description,50)}
-              </p>
-              <p className={classes.price}>${item.price}</p>
-            </div>
-            <div className={classes.form}>
-              <form onSubmit={handleAddToCart}>
-                <input
-                  type="number"
-                  min={1}
-                  max={10}
-                  value={quantity}
-                  onChange={handleQuantity}
-                />
-
-                <button type="submit">Add to cart</button>
-              </form>
-            </div>
-            <p className={classes.itemQuantity}>
-              Added Item Quantity: {itemQuantity}
+      <div className={classes.card}>
+        <article className={classes.article}>
+          <div>
+            <img src={item.images[0]} alt={item.title} />
+          </div>
+          <div>
+            <p className={classes.title}>{item.title}</p>
+            <p className={classes.description}>
+              {addElipsis(item.description, 50)}
             </p>
-          </article>
-        </div>
-      )}
+            <p className={classes.price}>${item.price}</p>
+          </div>
+          <div className={classes.form}>
+            <form onSubmit={handleAddToCart}>
+              <input
+                type="number"
+                min={1}
+                max={10}
+                value={quantity}
+                onChange={handleQuantity}
+              />
+
+              <button type="submit">Add to cart</button>
+            </form>
+          </div>
+          <p className={classes.itemQuantity}>
+            Added Item Quantity: {itemQuantity}
+          </p>
+        </article>
+      </div>
     </>
   );
 };

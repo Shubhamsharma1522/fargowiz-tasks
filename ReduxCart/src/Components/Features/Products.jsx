@@ -3,14 +3,25 @@ import axios from "axios";
 import classes from "./Products.module.css";
 import ProductsList from "./ProductsList";
 import Pagination from "./Pagination";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Products = () => {
+  const navigate = useNavigate();
   const [state, setState] = useState({
     loadedData: [],
     currentPage: 1,
     productPerPage: 10,
   });
   //   console.log(loadedData, "loaded data");
+  
+  const { isAuthenticate } = useSelector((state) => state.auth);
+  useEffect(() => {
+    if (!isAuthenticate) {
+      navigate("/login");
+    }
+  }, [isAuthenticate]);
+
 
   useEffect(() => {
     const fetchData = async () => {

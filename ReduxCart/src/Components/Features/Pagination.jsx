@@ -1,6 +1,5 @@
 import React from "react";
 import "../../index.css";
-import { useSelector } from "react-redux";
 
 const Pagination = ({
   productsPerPage,
@@ -9,7 +8,6 @@ const Pagination = ({
   setCurrentPage,
 }) => {
   const pageNumbers = [];
-  const { isAuthenticate } = useSelector((state) => state.auth);
 
   for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
     pageNumbers.push(i);
@@ -25,20 +23,18 @@ const Pagination = ({
 
   return (
     <nav>
-      {isAuthenticate && (
-        <ul className="pagination">
-          {pageNumbers.map((number) => (
-            <li key={number} className="page-item">
-              <button
-                className={`${currentPage === number ? "active" : ""}`}
-                onClick={() => handlePageClick(number)}
-              >
-                {number}
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul className="pagination">
+        {pageNumbers.map((number) => (
+          <li key={number} className="page-item">
+            <button
+              className={`${currentPage === number ? "active" : ""}`}
+              onClick={() => handlePageClick(number)}
+            >
+              {number}
+            </button>
+          </li>
+        ))}
+      </ul>
     </nav>
   );
 };

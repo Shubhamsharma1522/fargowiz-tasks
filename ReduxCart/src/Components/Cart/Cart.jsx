@@ -21,7 +21,7 @@ const Cart = () => {
 
   const handlePlaceOrder = () => {
     dispatch(cartActions.clearCart());
-    navigate("/products");
+    navigate("/");
     alert("Congratulations !!! your order successfully placed");
   };
 

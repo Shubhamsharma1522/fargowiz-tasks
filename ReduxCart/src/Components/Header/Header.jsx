@@ -27,12 +27,14 @@ const Header = () => {
   };
 
   const toggleCartHandler = () => {
-    navigate("/cart");
+    {
+      isAuthenticate && navigate("/cart");
+    }
   };
 
   const handleTitleClick = () => {
     if (isAuthenticate) {
-      navigate("/products");
+      navigate("/");
     } else {
       navigate("/login");
     }
