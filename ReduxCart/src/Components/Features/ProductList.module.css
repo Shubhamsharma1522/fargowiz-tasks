@@ -1,0 +1,78 @@
+.card {
+  margin: 0px 20px 0px 15px;
+  width: fit-content;
+  border-radius: 0.5rem;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0px 1px 4px 0px white;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 29rem;
+  width: 19rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.article img {
+  width: 20rem;
+  height: 12rem;
+  box-shadow: 1px 3px 8px black;
+  object-fit: cover;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #101820;
+  margin-top: 0px;
+}
+
+.description {
+  font-size: 1rem;
+  color: #101820;
+}
+
+.price {
+  margin-top: 0px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgba(26, 26, 207, 0.788);
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.form input {
+  width: 4rem;
+  height: 1.7rem;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 8px black;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+.form button {
+  width: 8rem;
+  height: 1.9rem;
+  margin-left: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 8px black;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+.form button:hover{
+  background-color: rgba(40, 40, 170, 0.685);
+}
+
+.itemQuantity {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+}

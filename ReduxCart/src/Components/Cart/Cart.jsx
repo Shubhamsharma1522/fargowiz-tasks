@@ -1,0 +1,55 @@
+import React from "react";
+import image from "../../assets/empty cart.png";
+import { useDispatch, useSelector } from "react-redux";
+import CartItems from "./CartItems";
+import classes from "./Cart.module.css";
+import { useNavigate } from "react-router-dom";
+import { cartActions } from "../../Store/CartSlice";
+
+const Cart = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const cartItems = useSelector((state) => state.cart.products);
+  const { isAuthenticate } = useSelector((state) => state.auth);
+
+  const totalCartPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+
+  const handlePlaceOrder = () => {
+    dispatch(cartActions.clearCart());
+    navigate("/products");
+    alert("Congratulations !!! your order successfully placed");
+  };
+
+  return (
+    <>
+      {isAuthenticate && (
+        <div className={classes.cart}>
+          <h2 style={{ textAlign: "center" }}>Your Cart</h2>
+
+          <div className={classes.items}>
+            {cartItems.length > 0 ? (
+              cartItems.map((item) => <CartItems key={item.id} item={item} />)
+            ) : (
+              <>
+                <div style={{ textAlign: "center" }}>Your Cart is Empty</div>
+              </>
+            )}
+          </div>
+          {cartItems.length > 0 && (
+            <div className={classes.cartEnd}>
+              <p>Cart Price : ${totalCartPrice}</p>
+              <button className={classes.placeOrder} onClick={handlePlaceOrder}>
+                Place Order
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Cart;

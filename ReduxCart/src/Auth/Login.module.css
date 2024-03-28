@@ -1,0 +1,36 @@
+.div {
+  color: black;
+  background-color: rgb(255 255 255);
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  box-shadow: 1px 1px 7px black;
+  border-radius: 16px;
+}
+
+.email {
+  width: 90%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.password {
+  width: 90%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.87);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

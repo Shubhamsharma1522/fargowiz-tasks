@@ -1,0 +1,60 @@
+.register {
+  color: black;
+  background-color: rgb(255 255 255);
+  max-width: 400px;
+  margin: 38px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  box-shadow: 1px 1px 7px black;
+  border-radius: 16px;
+}
+
+.usernamediv {
+  margin-bottom: 20px;
+}
+
+.username {
+  width: 90%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.emaildiv {
+  margin-bottom: 20px;
+}
+
+.email {
+  width: 90%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.passworddiv {
+  margin-bottom: 20px;
+}
+
+.password {
+  width: 90%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.buttondiv {
+  margin-bottom: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.87);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

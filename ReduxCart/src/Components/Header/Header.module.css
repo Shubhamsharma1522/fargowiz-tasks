@@ -1,0 +1,84 @@
+.header {
+  padding: 2px 10px 2px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  box-shadow: 1px 1px 7px black;
+}
+
+.start {
+  display: flex;
+  align-items: center;
+}
+
+.start h2 {
+  font-size: 1.7rem;
+}
+
+.start span {
+  color: red;
+
+}
+
+.start button {
+  width: 3.5rem;
+  height: 2rem;
+  margin-left: 1rem;
+  border-radius: 50px;
+  display: flex;
+  border: none;
+  color: white;
+  background-color: #101820;
+}
+
+.start button:hover {
+  color: red;
+   box-shadow: 1px 1px 7px black;
+}
+
+.end {
+  display: flex;
+  justify-content: center;
+}
+
+.end button {
+  height: 2rem;
+  width: 5rem;
+  color: white;
+  background-color: #101820;
+  font-size: 1rem;
+  border: none;
+}
+
+.end button:hover {
+  color: red;
+  border-bottom: 1px solid red;
+}
+
+.login {
+  margin-right: 8px;
+}
+
+.clearButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.clearButtons button {
+  height: 2rem;
+  width: 5rem;
+  color: white;
+  background-color: #101820;
+  font-size: 1rem;
+  border: none;
+}
+
+.clearButtons button:hover {
+  color: red;
+  border-bottom: 1px solid red;
+}
+
+.clear {
+  margin-right: 8px;
+}

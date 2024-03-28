@@ -1,0 +1,81 @@
+/* CartItems.module.css */
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
+  height: 8rem;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 0px white;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+}
+
+.title img {
+  width: 80px;
+  height: 70px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.buttons span {
+  color: black;
+  font-weight: bold;
+}
+
+.buttons button {
+  font-size: 1rem;
+  width: 2.5rem;
+  height: 2rem;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.87);
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background-color: rgba(36, 36, 168, 0.685);
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgba(0, 0, 255, 0.733);
+}
+
+.remove button {
+  width: 9rem;
+  height: 2.5rem;
+  margin-left: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+.remove button:hover {
+  background-color: #c82333;
+}
+
+.totalPrice {
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+}

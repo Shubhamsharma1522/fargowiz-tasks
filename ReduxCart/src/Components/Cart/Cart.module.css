@@ -1,0 +1,39 @@
+.cart {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.placeOrder {
+  width: 9rem;
+  height: 2.5rem;
+  margin-left: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  /* box-shadow: 2px 2px 2px white; */
+  color: white;
+  background-color: rgba(0, 0, 0, 0.575);
+}
+
+.placeOrder:hover {
+  color: black;
+  background-color: rgb(0, 128, 64);
+  /* box-shadow: 3px 3px 3px black; */
+}
+
+.cartEnd {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  width: 50%;
+}

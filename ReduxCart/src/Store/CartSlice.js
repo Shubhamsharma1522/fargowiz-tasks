@@ -1,0 +1,82 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const cartSlice = createSlice({
+  name: "cart",
+  initialState: {
+    products: [],
+  },
+  reducers: {
+    addToCart(state, action) {
+      const newProduct = action.payload;
+      const existingProduct = state.products.find(
+        (product) => product.id === newProduct.id
+      );
+
+      const totalQuantityInCart = state.products.reduce(
+        (total, item) => total + item.quantity,
+        0
+      );
+
+      if (existingProduct) {
+        if (totalQuantityInCart + newProduct.quantity > 20) {
+          alert("Can not exceed..more than 20 products");
+          return;
+        }
+        existingProduct.quantity =
+          existingProduct.quantity + newProduct.quantity || 1;
+      } else {
+        if (totalQuantityInCart + (newProduct.quantity || 1) > 20) {
+          alert("Can not exceed..more than 20 products");
+          return;
+        }
+        state.products.push(newProduct);
+      }
+    },
+
+    increaseQuantity(state, action) {
+      const productId = action.payload;
+      const product = state.products.find(
+        (product) => product.id === productId
+      );
+
+      const totalProductQuantity = state.products.reduce(
+        (total, product) => total + product.quantity,
+        0
+      );
+
+      if (product) {
+        if (totalProductQuantity + 1 > 20) {
+          alert("can not exceed limit");
+          return;
+        }
+
+        product.quantity++;
+      }
+    },
+
+    decreaseQuantity(state, action) {
+      const productId = action.payload;
+      const product = state.products.find(
+        (product) => product.id === productId
+      );
+
+      if (product && product.quantity > 1) {
+        product.quantity--;
+      }
+    },
+
+    removeToCart(state, action) {
+      const productId = action.payload;
+      state.products = state.products.filter(
+        (product) => product.id !== productId
+      );
+    },
+
+    clearCart(state) {
+      state.products = [];
+    },
+  },
+});
+
+export const cartActions = cartSlice.actions;
+export default cartSlice;
