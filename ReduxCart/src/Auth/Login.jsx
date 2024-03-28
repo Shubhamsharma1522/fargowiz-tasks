@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import classes from "./Login.module.css";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
 import { authActions } from "../Store/AuthSlice";
 
 const Login = () => {
@@ -105,7 +105,6 @@ const Login = () => {
         <button type="submit" className={classes.button}>
           Login
         </button>
-        <Toaster position="top-center" reverseOrder={false} />
       </form>
       <div style={{ marginTop: "20px" }}>
         <p>

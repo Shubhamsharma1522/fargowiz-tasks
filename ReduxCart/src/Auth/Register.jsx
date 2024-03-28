@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import classes from "./Register.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -108,7 +108,6 @@ const Register = () => {
         )}
         <div className={classes.buttondiv}>
           <button className={classes.button}>Register</button>
-          <Toaster position="top-center" reverseOrder={false} />
         </div>
         <div style={{ marginBottom: "20px" }}>
           <p>

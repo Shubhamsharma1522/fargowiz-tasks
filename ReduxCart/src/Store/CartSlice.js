@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -19,17 +20,19 @@ const cartSlice = createSlice({
 
       if (existingProduct) {
         if (totalQuantityInCart + newProduct.quantity > 20) {
-          alert("Can not exceed..more than 20 products");
+          toast.error("Cannot exceed more than 20 products");
           return;
         }
         existingProduct.quantity =
           existingProduct.quantity + newProduct.quantity || 1;
+        toast.success("Product added to cart successfully!");
       } else {
         if (totalQuantityInCart + (newProduct.quantity || 1) > 20) {
-          alert("Can not exceed..more than 20 products");
+          toast.error("Cannot exceed more than 20 products");
           return;
         }
         state.products.push(newProduct);
+        toast.success("Product added to cart successfully!");
       }
     },
 
@@ -46,11 +49,12 @@ const cartSlice = createSlice({
 
       if (product) {
         if (totalProductQuantity + 1 > 20) {
-          alert("can not exceed limit");
+          toast.error("Cannot exceed limit");
           return;
         }
 
         product.quantity++;
+        toast.success("Product added to cart successfully!");
       }
     },
 

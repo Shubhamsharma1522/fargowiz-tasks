@@ -5,19 +5,14 @@ import { cartActions } from "../../Store/CartSlice";
 
 const ProductsList = ({ item }) => {
   const [quantity, setQuantity] = useState(1);
-  // console.log(quantity, "quantity");
   const dispatch = useDispatch();
 
   const cartQuantity = useSelector((state) => state.cart.products);
-
   const cartItem = cartQuantity.find((cartItem) => cartItem.id === item.id);
-
   const itemQuantity = cartItem ? cartItem.quantity : 0;
 
   const handleQuantity = (event) => {
     const value = parseInt(event.target.value);
-    console.log(value, "value");
-    // console.log(value, "value");
     setQuantity(value);
   };
 
@@ -26,7 +21,7 @@ const ProductsList = ({ item }) => {
     dispatch(cartActions.addToCart({ ...item, quantity }));
   };
 
-  //elipsis method
+  // Elipsis method
   const addElipsis = (str, limit) => {
     return str.length > limit ? str.substring(0, limit) + "..." : str;
   };
