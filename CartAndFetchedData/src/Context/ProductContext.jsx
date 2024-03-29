@@ -15,8 +15,6 @@ export const useProduct = () => {
 
 export const ProductProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const [showAlert, setShowAlert] = useState(false); 
-  const [clearAlert, setClearAlert] = useState(false); 
 
   const addByQuantity = (newItem, quantity) => {
     console.log(cart, newItem, quantity, "addByQuantity");
@@ -27,7 +25,7 @@ export const ProductProvider = ({ children }) => {
     // Check if the total items in the cart exceed 20
     const cartLength = getCartItemsTotal(cart);
     if (cartLength + quantity > 20) {
-      setShowAlert(true); 
+      alert("Can not exceed limit ")
       return;
     }
 
@@ -48,14 +46,12 @@ export const ProductProvider = ({ children }) => {
   };
 
   const clearCart = () => {
-    setClearAlert(true); 
+    alert("Cleared added items")
     setCart([]);
   };
 
   return (
-    <ProductContext.Provider
-      value={{ cart, addByQuantity, clearCart, setShowAlert, setClearAlert }} // Pass showAlert and setClearAlert functions in value
-    >
+    <ProductContext.Provider value={{ cart, addByQuantity, clearCart }}>
       {children}
     </ProductContext.Provider>
   );
