@@ -42,7 +42,7 @@ const Login = () => {
     console.log(email, "email");
     navigate("/");
 
-    toast.success("Successfully Logged In!");
+    toast.success("Welcome user...!");
   };
 
   const handleInputChange = (e) => {
