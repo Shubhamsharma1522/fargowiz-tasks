@@ -14,7 +14,7 @@ const Products = () => {
     productPerPage: 10,
   });
   //   console.log(loadedData, "loaded data");
-  
+
   const { isAuthenticate } = useSelector((state) => state.auth);
   useEffect(() => {
     if (!isAuthenticate) {
@@ -22,16 +22,16 @@ const Products = () => {
     }
   }, [isAuthenticate]);
 
+  const fetchData = async () => {
+    try {
+      const { data } = await axios.get("https://dummyjson.com/products");
+      setState((prevState) => ({ ...prevState, loadedData: data.products }));
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data } = await axios.get("https://dummyjson.com/products");
-        setState((prevState) => ({ ...prevState, loadedData: data.products }));
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
     fetchData();
   }, []);
 

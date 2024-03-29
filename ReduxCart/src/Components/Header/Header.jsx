@@ -9,6 +9,9 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const totalQuantity = useSelector((state) => state.cart.products);
+
+  // console.log(totalQuantity, "total quantity");
+
   const { isAuthenticate, user } = useSelector((state) => state.auth);
 
   const cartProducts = totalQuantity.reduce(

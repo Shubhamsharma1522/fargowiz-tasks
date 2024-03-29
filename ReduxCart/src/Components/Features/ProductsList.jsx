@@ -8,17 +8,23 @@ const ProductsList = ({ item }) => {
   const dispatch = useDispatch();
 
   const cartQuantity = useSelector((state) => state.cart.products);
+
   const cartItem = cartQuantity.find((cartItem) => cartItem.id === item.id);
+  // console.log(cartItem, "cart item");
+
   const itemQuantity = cartItem ? cartItem.quantity : 0;
+  // console.log("itemQuantity", itemQuantity);
 
   const handleQuantity = (event) => {
     const value = parseInt(event.target.value);
+    // console.log(value, "handle quantity");
     setQuantity(value);
   };
 
   const handleAddToCart = (event) => {
     event.preventDefault();
     dispatch(cartActions.addToCart({ ...item, quantity }));
+    // console.log(item, quantity, "handle add to cart");
   };
 
   // Elipsis method

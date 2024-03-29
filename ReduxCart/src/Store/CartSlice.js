@@ -9,14 +9,15 @@ const cartSlice = createSlice({
   reducers: {
     addToCart(state, action) {
       const newProduct = action.payload;
+      // console.log(action, "add to cart");
       const existingProduct = state.products.find(
         (product) => product.id === newProduct.id
       );
 
-      const totalQuantityInCart = state.products.reduce(
-        (total, item) => total + item.quantity,
-        0
-      );
+      const totalQuantityInCart = state.products.reduce((total, item) => {
+        console.log(`${total} accu, ${item.quantity} current item`);
+        return total + item.quantity;
+      }, 0);
 
       if (existingProduct) {
         if (totalQuantityInCart + newProduct.quantity > 20) {
@@ -78,7 +79,7 @@ const cartSlice = createSlice({
 
     clearCart(state) {
       state.products = [];
-      toast.error("Cleared Your all Products...Now your cart is empty!!")
+      toast.error("Cleared Your all Products...Now your cart is empty!!");
     },
   },
 });
