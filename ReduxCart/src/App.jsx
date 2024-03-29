@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <>
-      <ToastContainer />
+      <ToastContainer position="top-center" autoClose={1000} />
       <Header />
       <Outlet />
     </>
