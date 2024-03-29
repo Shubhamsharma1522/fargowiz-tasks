@@ -78,6 +78,7 @@ const cartSlice = createSlice({
 
     clearCart(state) {
       state.products = [];
+      toast.error("Cleared Your all Products...Now your cart is empty!!")
     },
   },
 });
