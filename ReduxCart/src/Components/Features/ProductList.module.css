@@ -11,6 +11,18 @@
   width: 19rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  transition:
+    width 1s,
+    height 1s,
+    background-color 1s,
+    rotate 0.5s;
+}
+
+.card:hover {
+  background-color: #ffcccc;
+  width: 20rem;
+  height: 30rem;
+  /* rotate: 180deg; */
 }
 
 .article img {
@@ -66,7 +78,7 @@
   background-color: rgba(0, 0, 0, 0.87);
 }
 
-.form button:hover{
+.form button:hover {
   background-color: rgba(40, 40, 170, 0.685);
 }
 
