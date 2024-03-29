@@ -12,7 +12,7 @@ const Header = () => {
 
   // console.log(totalQuantity, "total quantity");
 
-  const { isAuthenticate, user } = useSelector((state) => state.auth);
+  const { isAuthenticated, user } = useSelector((state) => state.auth);
 
   const cartProducts = totalQuantity.reduce(
     (total, item) => total + item.quantity,
@@ -31,12 +31,12 @@ const Header = () => {
 
   const toggleCartHandler = () => {
     {
-      isAuthenticate && navigate("/cart");
+      isAuthenticated && navigate("/cart");
     }
   };
 
   const handleTitleClick = () => {
-    if (isAuthenticate) {
+    if (isAuthenticated) {
       navigate("/");
     } else {
       navigate("/login");
@@ -50,7 +50,7 @@ const Header = () => {
           Redux <span>Cart</span>
         </h2>
 
-        {isAuthenticate && (
+        {isAuthenticated && (
           <button onClick={toggleCartHandler}>
             {" "}
             <svg
@@ -67,8 +67,8 @@ const Header = () => {
           </button>
         )}
       </div>
-      {isAuthenticate && <div style={{ fontSize: "15px" }}>{user.email}</div>}
-      {!isAuthenticate ? (
+      {isAuthenticated && <div style={{ fontSize: "15px" }}>{user.email}</div>}
+      {!isAuthenticated ? (
         <div className={classes.end}>
           <Link to="/login">
             <button className={classes.login}>Login</button>

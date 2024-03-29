@@ -15,7 +15,7 @@ const cartSlice = createSlice({
       );
 
       const totalQuantityInCart = state.products.reduce((total, item) => {
-        console.log(`${total} accu, ${item.quantity} current item`);
+        // console.log(`${total} accu, ${item.quantity} current item`);
         return total + item.quantity;
       }, 0);
 

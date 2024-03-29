@@ -15,12 +15,12 @@ const Products = () => {
   });
   //   console.log(loadedData, "loaded data");
 
-  const { isAuthenticate } = useSelector((state) => state.auth);
+  const { isAuthenticated } = useSelector((state) => state.auth);
   useEffect(() => {
-    if (!isAuthenticate) {
+    if (!isAuthenticated) {
       navigate("/login");
     }
-  }, [isAuthenticate]);
+  }, [isAuthenticated]);
 
   const fetchData = async () => {
     try {

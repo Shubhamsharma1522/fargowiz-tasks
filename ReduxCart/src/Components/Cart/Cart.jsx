@@ -9,7 +9,7 @@ const Cart = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cart.products);
-  const { isAuthenticate } = useSelector((state) => state.auth);
+  const { isAuthenticated } = useSelector((state) => state.auth);
 
   const totalCartPrice = cartItems.reduce((total, item) => {
     const totalPriceForItem = item.price * item.quantity;
@@ -27,7 +27,7 @@ const Cart = () => {
 
   return (
     <>
-      {isAuthenticate && (
+      {isAuthenticated && (
         <div className={classes.cart}>
           <h2 style={{ textAlign: "center" }}>Your Cart</h2>
 
