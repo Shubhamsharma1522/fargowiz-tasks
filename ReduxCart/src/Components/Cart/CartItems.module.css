@@ -11,12 +11,10 @@
   border-radius: 5px;
   box-shadow: 0px 0px 4px 0px white;
   transition: transform 0.5s;
-  
 }
 
 .main:hover {
-  transform: scale(1.05);
-  
+  transform: scale(1.02);
 }
 
 .title {
@@ -85,4 +83,31 @@
   font-size: 1rem;
   font-weight: bold;
   color: black;
+}
+
+/* Mobile Responsive Design */
+@media only screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .buttons {
+    flex-wrap: wrap;
+  }
+
+  .buttons button {
+    width: auto;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .remove button {
+    width: 100%;
+    margin-left: 0;
+  }
 }
