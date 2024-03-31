@@ -25,6 +25,7 @@ const ProductsList = ({ item }) => {
     event.preventDefault();
     dispatch(cartActions.addToCart({ ...item, quantity }));
     // console.log(item, quantity, "handle add to cart");
+    setQuantity(1);
   };
 
   // Elipsis method

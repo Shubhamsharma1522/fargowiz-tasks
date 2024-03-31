@@ -19,9 +19,8 @@ export const addElipsis = (str, limit) => {
 };
 
 function Products({ item }) {
-  const [quantity, setQuantity] = useState(1); 
+  const [quantity, setQuantity] = useState(1);
   const { addByQuantity } = useProduct();
-
 
   //for submitting the form and adding the item to the cart
   const handleAddToCart = (event) => {
@@ -30,10 +29,9 @@ function Products({ item }) {
     addByQuantity(item, quantity); // Add item with specified quantity to cart
   };
 
-
   //or updating the quantity when the user changes the input field
   const handleQuantityChange = (event) => {
-    const value = parseInt(event.target.value); 
+    const value = parseInt(event.target.value);
     console.log("item in handle addToCart function", value);
     setQuantity(value); // Update quantity state
   };
