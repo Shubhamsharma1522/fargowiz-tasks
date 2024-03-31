@@ -85,7 +85,7 @@
   color: black;
 }
 
-/* Mobile Responsive Design */
+/* mobile responsive design */
 @media only screen and (max-width: 768px) {
   .card {
     width: 80%;

@@ -4,13 +4,10 @@
   overflow: hidden;
 }
 
-/* Mobile Responsive Design */
+/* mobile responsive design */
 @media only screen and (max-width: 768px) {
   .productList {
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(15rem, 1fr)
-    ); 
-    gap: 1rem; 
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
   }
 }

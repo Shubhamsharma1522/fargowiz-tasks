@@ -38,7 +38,7 @@
   width: 50%;
 }
 
-/* Mobile Responsive Design */
+/* mobile responsive design */
 @media only screen and (max-width: 768px) {
   .cart {
     padding: 10px;
