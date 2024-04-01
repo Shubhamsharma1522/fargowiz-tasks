@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "name": "Redux cart",
+
+  "routes": [{ "src": "/(.*)", "dest": "/" }]
+}
