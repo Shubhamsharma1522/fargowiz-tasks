@@ -3,13 +3,13 @@ import { toast } from "react-toastify";
 
 const loadCartState = () => {
   const serializedState = localStorage.getItem("cart");
-  console.log(JSON.parse(serializedState, "loacal cart state"));
+  // console.log(JSON.parse(serializedState, "loacal cart state"));
   return JSON.parse(serializedState);
 };
 
 const saveCartState = (state) => {
   const serializedState = JSON.stringify(state);
-  console.log(serializedState, "save cart state");
+  // console.log(serializedState, "save cart state");
   localStorage.setItem("cart", serializedState);
 };
 
