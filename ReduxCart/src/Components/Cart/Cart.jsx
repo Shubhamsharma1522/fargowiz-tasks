@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CartItems from "./CartItems";
 import classes from "./Cart.module.css";
@@ -17,6 +17,8 @@ const Cart = () => {
     return total + totalPriceForItem;
   }, 0);
 
+ 
+
   // console.log("Total cart price:", totalCartPrice);
 
   const handlePlaceOrder = () => {
@@ -24,6 +26,12 @@ const Cart = () => {
     navigate("/");
     alert("Congratulations !!! your order successfully placed");
   };
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate("/login");
+    }
+  }, [isAuthenticated]);
 
   return (
     <>
