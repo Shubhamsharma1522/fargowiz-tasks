@@ -1,6 +1,6 @@
 {
   "version": 2,
   "name": "Gmail-Clone-backend",
-  "builds": [{ "src": "app.jsx", "use": "@vercel" }],
+  "builds": [{ "src": "App.jsx", "use": "@vercel" }],
   "routes": [{ "src": "/(.*)", "dest": "/" }]
 }
